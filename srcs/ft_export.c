@@ -14,7 +14,7 @@
 
 void			print_quote(char *str, int fd)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	if (haveequal(str))
@@ -38,8 +38,8 @@ void			print_quote(char *str, int fd)
 
 void			print_export(char **envp, int fd)
 {
-	int		i;
-	char	**sorted;
+	int			i;
+	char		**sorted;
 
 	i = 0;
 	sorted = sort_env(envp);
@@ -103,13 +103,13 @@ int				add_envp(char *cmd, char ***envp)
 	return (1);
 }
 
-int			ft_export(t_cmd *cmd_list, char ***envp, int fd)
+int				ft_export(t_cmd *cmd_list, char ***envp, int fd)
 {
 	int			i;
-	int 		keyindex;
+	int			keyindex;
 
 	i = 1;
-	while(cmd_list->cmdline[i].cmd && cmd_list->cmdline[i].redir_flag == 0)
+	while (cmd_list->cmdline[i].cmd && cmd_list->cmdline[i].redir_flag == 0)
 	{
 		if (isvalid_export(cmd_list->cmdline[i].cmd))
 		{
@@ -117,12 +117,11 @@ int			ft_export(t_cmd *cmd_list, char ***envp, int fd)
 			{
 				if (haveequal(cmd_list->cmdline[i].cmd))
 					add_key_envp(envp, cmd_list->cmdline[i].cmd, keyindex);
-					//key가 있는데 value가 없이 들어오면 아무 처리 안해줌.
 			}
 			else
-				add_envp(cmd_list->cmdline[i].cmd, envp);//key가 없어서 새로 추가.
+				add_envp(cmd_list->cmdline[i].cmd, envp);
 		}
-		else//유효한 키가 아닐때,
+		else
 			cmd_list->err_manage.errcode = 5;
 		i++;
 	}

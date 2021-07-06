@@ -12,150 +12,148 @@
 
 #include "../includes/cmd_split.h"
 
-static int		ft_split_cnt(char const *s, const char c)
+void				put_quote_flag(char const *s, int *quote)
 {
-	int cnt;
-	int begin;
-	int quote;
-	int redir;
-
-	cnt = 0;
-	begin = 0;
-	quote = 0;
-	redir = 0;
-	while (*s)
+	if (*s == '"' && ((*quote) == 0 || (*quote) == '"'))
 	{
-		if (*s == '"' && (quote == 0 || quote == '"'))
-		{
-			if (quote == '"')
-				quote = 0;
-			else
-				quote = '"';
-		}
-		else if (*s == '\'' && (quote == 0 || quote == '\''))
-		{
-			if (quote == '\'')
-				quote = 0;
-			else
-				quote = '\'';
-		}
-		if (begin == 0)
-		{
-			if (*s != c)
-				begin = 1;
-			if (*s == '<' || *s == '>')
-				redir++;
-		}
+		if ((*quote) == '"')
+			(*quote) = 0;
 		else
-		{
-			if (*s == c && quote == 0)
-			{
-				if (redir)
-					redir = 0;
-				begin = 0;
-				cnt++;
-			}
-			else if ((*s == '>' || *s == '<') && quote == 0)
-			{
-				if (redir == 0 && *(s - 1) != ' ')
-				{
-					cnt++;
-				}
-				redir++;
-			}
-			else if (*s != c && *s != '\''
-						&& !(*s == '>' || *s == '<')
-						&& quote == 0
-						&& (*(s - 1) == '>' || *(s - 1) == '<'))
-			{
-				if (redir)
-					redir = 0;
-				cnt++;
-			}
-			else if (*s == '\'' && quote == '\''
-						&& (*(s - 1) == '>' || *(s - 1) == '<'))
-			{
-				if (redir)
-					redir = 0;
-				cnt++;
-			}
-			else if (*s == '"' && quote == '"'
-						&& (*(s - 1) == '>' || *(s - 1) == '<'))
-			{
-				if (redir)
-					redir = 0;
-				cnt++;
-			}
-		}
-		s++;
+			(*quote) = '"';
 	}
-	return (begin == 0 ? cnt : cnt + 1);
+	else if (*s == '\'' && ((*quote) == 0 || (*quote) == '\''))
+	{
+		if ((*quote) == '\'')
+			(*quote) = 0;
+		else
+			(*quote) = '\'';
+	}
 }
 
-static int		ft_word_len(char const *s, const char c)
+void				get_cnt(int *redir, int *cnt,
+							int *begin, int begin_zero_flag)
 {
-	int len;
-	int begin;
-	int quote;
+	if (*redir)
+		(*redir) = 0;
+	if (begin_zero_flag == 1)
+		(*begin) = 0;
+	(*cnt)++;
+}
 
-	len = 0;
-	begin = 0;
-	quote = 0;
-
-	if (*s == '>' || *s == '<')
+void				condition_to_cnt(t_split_flag *f,
+					char const *s, const char c, int *cnt)
+{
+	if (*s == c && f->quote == 0)
+		get_cnt(&f->redir, cnt, &f->begin, 1);
+	else if ((*s == '>' || *s == '<') && f->quote == 0)
 	{
-		while (*s)
-		{
-			if (*s == '>' || *s == '<')
-				len++;
-			else
-				return (len);
-			s++;
-		}
+		if (f->redir == 0 && *(s - 1) != ' ')
+			(*cnt)++;
+		f->redir++;
 	}
+	else if (*s != c && *s != '\''
+				&& !(*s == '>' || *s == '<')
+				&& f->quote == 0
+				&& (*(s - 1) == '>' || *(s - 1) == '<'))
+		get_cnt(&f->redir, cnt, &f->begin, 0);
+	else if (*s == '\'' && f->quote == '\''
+				&& (*(s - 1) == '>' || *(s - 1) == '<'))
+		get_cnt(&f->redir, cnt, &f->begin, 0);
+	else if (*s == '"' && f->quote == '"'
+				&& (*(s - 1) == '>' || *(s - 1) == '<'))
+		get_cnt(&f->redir, cnt, &f->begin, 0);
+}
+
+static int			ft_split_cnt(char const *s, const char c)
+{
+	int				cnt;
+	t_split_flag	f;
+
+	cnt = 0;
+	f.begin = 0;
+	f.quote = 0;
+	f.redir = 0;
 	while (*s)
 	{
-		if (*s == '"' && (quote == 0 || quote == '"'))
-		{
-			if (quote == '"')
-				quote = 0;
-			else
-				quote = '"';
-		}
-		else if (*s == '\'' && (quote == 0 || quote == '\''))
-		{
-			if (quote == '\'')
-				quote = 0;
-			else
-				quote = '\'';
-		}
-		if (begin == 0)
+		put_quote_flag(s, &f.quote);
+		if (f.begin == 0)
 		{
 			if (*s != c)
-			{
-				begin = 1;
-				len++;
-			}
+				f.begin = 1;
+			if (*s == '<' || *s == '>')
+				f.redir++;
 		}
 		else
+			condition_to_cnt(&f, s, c, &cnt);
+		s++;
+	}
+	return (f.begin == 0 ? cnt : cnt + 1);
+}
+
+int					word_redirect_len(char const **s, int *len)
+{
+	if ((**s) == '>' || (**s) == '<')
+	{
+		while (**s)
 		{
-			if (*s == c && quote == 0)
-				break ;
-			else if ((*s == '>' || *s == '<') && quote == 0)
-				break ;
+			if ((**s) == '>' || (**s) == '<')
+				(*len)++;
 			else
-				len++;
+				return (*len);
+			(*s)++;
 		}
+	}
+	return (*len);
+}
+
+int					condition_to_len_for_word(char const *s,
+						const char c, int *len, t_split_flag *f)
+{
+	if (f->begin == 0)
+	{
+		if (*s != c)
+		{
+			f->begin = 1;
+			(*len)++;
+		}
+	}
+	else
+	{
+		if (*s == c && f->quote == 0)
+			return (1);
+		else if ((*s == '>' || *s == '<') && f->quote == 0)
+			return (1);
+		else
+			(*len)++;
+	}
+	return (0);
+}
+
+static int			ft_word_len(char const *s, const char c)
+{
+	int				len;
+	t_split_flag	f;
+
+	len = 0;
+	f.begin = 0;
+	f.quote = 0;
+	if (word_redirect_len(&s, &len) != 0)
+		return (len);
+	while (*s)
+	{
+		put_quote_flag(s, &f.quote);
+		if(condition_to_len_for_word(s, c, &len, &f) == 1)
+			break;
 		s++;
 	}
 	return (len);
 }
 
-static char	*ft_alloc_word(int *idx, char const *s, const char c)
+static char			*ft_alloc_word(int *idx, char const *s, const char c)
 {
-	int		word_len;
-	char	*word;
-	int		i;
+	int				word_len;
+	char			*word;
+	int				i;
 
 	word_len = ft_word_len(&s[*idx], c);
 	word = (char*)malloc(sizeof(char) + (word_len + 1));
@@ -172,9 +170,9 @@ static char	*ft_alloc_word(int *idx, char const *s, const char c)
 	return (word);
 }
 
-static void	*ft_free(t_token *result, int len)
+static void			*ft_free(t_token *result, int len)
 {
-	int i;
+	int				i;
 
 	i = 0;
 	while (i < len)
@@ -182,11 +180,11 @@ static void	*ft_free(t_token *result, int len)
 	return (NULL);
 }
 
-t_token	*cmd_split(char const *s, char c)
+t_token				*cmd_split(char const *s, char c)
 {
-	int		i;
-	int		cursor;
-	t_token	*result;
+	int				i;
+	int				cursor;
+	t_token			*result;
 
 	if (s == NULL)
 		return (NULL);
@@ -196,7 +194,6 @@ t_token	*cmd_split(char const *s, char c)
 	if (result == NULL)
 		return (NULL);
 	while (s[cursor])
-	{
 		if (s[cursor] == c)
 			cursor++;
 		else
@@ -207,7 +204,6 @@ t_token	*cmd_split(char const *s, char c)
 				return (ft_free(result, i));
 			i++;
 		}
-	}
 	result[i].cmd = 0;
 	return (result);
 }

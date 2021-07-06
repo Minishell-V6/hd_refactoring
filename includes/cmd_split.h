@@ -16,5 +16,5 @@
 # include "structs.h"
 
 t_token			*cmd_split(char const *s, char c);
-
+void			put_quote_flag(char const *s, int *quote);
 #endif

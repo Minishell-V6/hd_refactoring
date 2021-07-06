@@ -12,6 +12,7 @@
 
 #ifndef REDIR_CHK_H
 # define REDIR_CHK_H
+# include <stdio.h> 
 # include "../libft/libft.h"
 # include "structs.h"
 

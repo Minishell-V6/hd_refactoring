@@ -6,18 +6,18 @@
 /*   By: seojeong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 19:52:35 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/05 20:30:05 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:20:42 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-int				g_exit_status = 0;
+int	g_exit_status = 0;
 
 int				main(int argc, char *argv[], char *envp[])
 {
-	t_cmd		*cmd_list;
 	char		*line;
+	t_cmd		*cmd_list;
 	char		**cpenv;
 
 	dup2(STDIN, 100);
