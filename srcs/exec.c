@@ -6,7 +6,7 @@
 /*   By: seuyu <seuyu@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 18:06:01 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/05 22:15:12 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/06 11:03:34 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int				non_builtin(t_cmd *cmd_list, t_arg st_arg, int fds[])
 	else
 		if ((flag = compare_env_path(cmd_list, &nbf, st_arg, fds)) == -1)
 			return (free_nbf(&nbf));
-	if (flag == 1)
+	if (flag == 1 || cmd_list->cmdline[0].redir_flag == 1)
 		return (1);
 	cmd_list->err_manage.errcode = 1;
 	return (0);
