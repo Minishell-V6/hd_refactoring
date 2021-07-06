@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unset.c                                            :+:      :+:    :+:   */
+/*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojeong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 16:27:21 by sejpark           #+#    #+#             */
-/*   Updated: 2021/07/03 20:02:35 by sejpark          ###   ########.fr       */
+/*   Updated: 2021/07/06 13:14:27 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/unset.h"
 
-int ft_find_envkey(char *key, char **envp)
+int				ft_find_envkey(char *key, char **envp)
 {
-	int i;
-	size_t key_len;
+	int			i;
+	size_t		key_len;
 
 	i = 0;
 	key_len = ft_strlen(key);
@@ -28,7 +28,7 @@ int ft_find_envkey(char *key, char **envp)
 	return (-1);
 }
 
-void ft_delete_env(int tgt_idx, char **envp)
+void			ft_delete_env(int tgt_idx, char **envp)
 {
 	free(envp[tgt_idx]);
 	while (envp[tgt_idx])
@@ -38,9 +38,9 @@ void ft_delete_env(int tgt_idx, char **envp)
 	}
 }
 
-int	ft_valid_key(char *key)
+int				ft_valid_key(char *key)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	if (ft_strlen(key) == 0)
@@ -56,10 +56,10 @@ int	ft_valid_key(char *key)
 	return (1);
 }
 
-int ft_unset(t_cmd *cmd_list, char **envp)
+int				ft_unset(t_cmd *cmd_list, char **envp)
 {
-	int i;
-	int tgt_idx;
+	int			i;
+	int			tgt_idx;
 
 	i = 1;
 	while (cmd_list->cmdline[i].cmd && cmd_list->cmdline[i].redir_flag == 0)

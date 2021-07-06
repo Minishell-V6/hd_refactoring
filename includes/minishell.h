@@ -6,7 +6,7 @@
 /*   By: seuyu <seuyu@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 19:54:23 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/05 21:57:36 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/06 13:56:30 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,39 +34,46 @@
 extern int g_exit_status;
 
 void				parse(t_cmd **cmd_list, char *line, char **envp);
-t_cmd				*ft_new(char *line, int pipe_flag, char **envp, int exit_flag);
+
+t_cmd				*ft_new(char *line, int pipe_flag, char **envp,
+					int exit_flag);
 char				check_quote(char *line);
-int					exec_function(t_cmd *cmd_list, char *argv[], char **envp[], int fds[]);
+
+int					exec(t_cmd *cmp_list, char *argv[], char **envp[]);
+int					exec_function(t_cmd *cmd_list, char *argv[], char **envp[],
+					int fds[]);
+
 void				init_nbf(t_nbf *nbf);
 int					free_nbf(t_nbf *nbf);
 int					check_redirect(t_cmd *cmd_list, int fds[]);
+void				exec_child(t_cmd *cmd_list, char *argv[], char **envp[],
+					int fds[]);
+int					exec_parents(int pid, int fds[]);
+
 char				*strjoin_path(char const *s1, char const *s2);
 int					check_whitespace(char *line);
-int					exec(t_cmd *cmp_list, char *argv[], char **envp[]);
+void				free_list(t_cmd *cmd_list);
+
 int					ft_cd(t_cmd *cmd_list);
 int					ft_exit(t_cmd *cmd_list);
 int					ft_pwd(int fd);
-void				print_errstr(t_cmd *cmd_list);
-//void				free_all(t_cmd *cmd_list);
-int	        		ft_echo(t_cmd *cmd_list, int fd);
-void				free_list(t_cmd *cmd_list);
-
-// env
+int					ft_echo(t_cmd *cmd_list, int fd);
 int					ft_env(char **envp, int fd);
-char				**copy_envp(char **envs);
-//export
 int					ft_export(t_cmd *cmd_list, char ***envp, int fd);
+
+void				print_errstr(t_cmd *cmd_list);
+
+char				**copy_envp(char **envs);
 int					add_envp(char *cmd, char ***envp);
 int					isvalid_export(char *line);
 int					cnt_envp_row(char **envp);
 char				**sort_env(char **envp);
 int					haveequal(char *line);
 void				add_key_envp(char ***envp, char *cmd, int keyindex);
-//signal
 void				set_signal(void);
 
-//redirect
 int					redirect(t_cmd *cmd_list, int **fds, int *last_index);
 int					redirect_check(t_cmd *cmd_list, int **fds);
-int					check_fd_error(t_cmd *cmd_list, int errorcode, int error_index, int fd);
+int					check_fd_error(t_cmd *cmd_list, int errorcode,
+					int error_index, int fd);
 #endif

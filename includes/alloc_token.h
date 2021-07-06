@@ -6,7 +6,7 @@
 /*   By: seuyu <seuyu@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 21:43:45 by sejpark           #+#    #+#             */
-/*   Updated: 2021/07/01 20:09:53 by seuyu            ###   ########.fr       */
+/*   Updated: 2021/07/06 13:57:38 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include "redir_chk.h"
 
 extern int g_exit_status;
-
 
 int		alloc_d_quote_cnt(char *src, char **dest, char **envp);
 int		alloc_s_quote_cnt(char *src, char **dest);
