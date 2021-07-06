@@ -6,16 +6,16 @@
 /*   By: sejpark <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 15:33:09 by sejpark           #+#    #+#             */
-/*   Updated: 2021/06/30 16:34:31 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/06 15:31:13 by hoylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_split_cnt(char const *s, const char c)
+static int		ft_split_cnt(char const *s, const char c)
 {
-	int cnt;
-	int begin;
+	int			cnt;
+	int			begin;
 
 	cnt = 0;
 	begin = 0;
@@ -39,10 +39,10 @@ int		ft_split_cnt(char const *s, const char c)
 	return (begin == 0 ? cnt : cnt + 1);
 }
 
-int		ft_word_len(char const *s, const char c)
+int				ft_word_len(char const *s, const char c)
 {
-	int len;
-	int begin;
+	int			len;
+	int			begin;
 
 	len = 0;
 	begin = 0;
@@ -68,11 +68,11 @@ int		ft_word_len(char const *s, const char c)
 	return (len);
 }
 
-char	*ft_alloc_word(int *idx, char const *s, const char c)
+static char		*ft_alloc_word(int *idx, char const *s, const char c)
 {
-	int		word_len;
-	char	*word;
-	int		i;
+	int			word_len;
+	char		*word;
+	int			i;
 
 	word_len = ft_word_len(&s[*idx], c);
 	word = (char*)malloc(sizeof(char) + (word_len + 1));
@@ -89,9 +89,9 @@ char	*ft_alloc_word(int *idx, char const *s, const char c)
 	return (word);
 }
 
-void	*ft_free(char **result, int len)
+void			*ft_free(char **result, int len)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (i < len)
@@ -99,11 +99,11 @@ void	*ft_free(char **result, int len)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	int		i;
-	int		cursor;
-	char	**result;
+	int			i;
+	int			cursor;
+	char		**result;
 
 	if (s == NULL)
 		return (NULL);

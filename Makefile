@@ -6,7 +6,7 @@
 #    By: seuyu <seuyu@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/25 19:30:48 by djeon             #+#    #+#              #
-#    Updated: 2021/07/06 13:20:43 by djeon            ###   ########.fr        #
+#    Updated: 2021/07/06 15:14:23 by hoylee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ SRC 		= srcs/minishell.c srcs/utils.c srcs/parse.c srcs/exec.c \
 			  srcs/signal_handle.c srcs/alloc_token.c srcs/cmd_split.c \
 			  srcs/get_parse_size.c srcs/redir_chk.c srcs/ft_getenv.c \
 			  srcs/redirect.c srcs/redirect_check.c \
-			  srcs/ft_echo.c srcs/ft_unset.c srcs/exec_utils.c srcs/utils2.c
+			  srcs/ft_echo.c srcs/ft_unset.c srcs/exec_utils.c srcs/utils2.c \
+			  srcs/ft_alloc_word.c srcs/d_quote_cnt.c \
+			  srcs/alloc_env_util.c srcs/ft_split_cnt.c
 
 OBJ_DIR 	= objs
 OBJ 		= $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

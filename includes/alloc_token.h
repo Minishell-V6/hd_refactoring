@@ -6,7 +6,7 @@
 /*   By: seuyu <seuyu@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 21:43:45 by sejpark           #+#    #+#             */
-/*   Updated: 2021/07/06 13:57:38 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/06 15:32:04 by hoylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ extern int g_exit_status;
 int		alloc_d_quote_cnt(char *src, char **dest, char **envp);
 int		alloc_s_quote_cnt(char *src, char **dest);
 t_token *ft_alloc_token(t_token *token, char **envp);
+int		next_quote_or_null(char *src, char ***dest);
+int		get_envkey(char *src, char **key);
 
 #endif

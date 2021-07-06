@@ -6,7 +6,7 @@
 /*   By: sejpark <sejpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 19:19:26 by sejpark           #+#    #+#             */
-/*   Updated: 2021/07/03 13:48:47 by sejpark          ###   ########.fr       */
+/*   Updated: 2021/07/06 15:18:52 by hoylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,6 @@
 
 t_token			*cmd_split(char const *s, char c);
 void			put_quote_flag(char const *s, int *quote);
+int				ft_split_cnt(char const *s, const char c);
+char			*ft_alloc_word(int *idx, char const *s, const char c);
 #endif
