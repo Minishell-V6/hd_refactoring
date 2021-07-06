@@ -6,7 +6,7 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 20:00:49 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 10:46:03 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/06 10:52:21 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int				check_redirect(t_cmd *cmd_list, int fds[])
 	int			fd;
 	int			right_flag;
 
-	if ((redir_err_chk(cmd_list) == -1) || ((right_flag = redirect_check(cmd_list, &fds)) == -1))
+	if ((redir_err_chk(cmd_list) == -1) ||
+			((right_flag = redirect_check(cmd_list, &fds)) == -1))
 		return (-1);
 	if (cmd_list->pipe_flag == 1 && right_flag == 0)
 		fd = fds[1];
