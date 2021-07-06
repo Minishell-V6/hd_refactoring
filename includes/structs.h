@@ -6,25 +6,12 @@
 /*   By: sejpark <sejpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:39:39 by sejpark           #+#    #+#             */
-/*   Updated: 2021/07/05 22:04:27 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/04 12:56:32 by sejpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
-
-typedef struct	s_arg
-{
-	char		**argv;
-	char		**envp;
-}				t_arg;
-
-typedef struct	s_nbf
-{
-	struct stat	*buf;
-	char		*env_path;
-	char		**paths;
-}				t_nbf;
 
 typedef struct	s_err
 {
@@ -45,7 +32,6 @@ typedef struct	s_cmd
 	int				pipe_flag;
 	int				exit_flag;
 	char			quote;
-	char			*path;
 	char			*(redirect_filename[4]);
 	//index 0 : left redirect char (<, <<);
 	//index 1 : left redirect filename;
@@ -54,5 +40,13 @@ typedef struct	s_cmd
 	struct s_err	err_manage;
 	struct s_cmd	*next;
 }				t_cmd;
+
+typedef struct	s_split_flag
+{
+	int			cnt;
+	int			begin;
+	int			quote;
+	int			redir;
+}				t_split_flag;
 
 #endif
