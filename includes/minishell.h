@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seuyu <seuyu@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 19:54:23 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 13:56:30 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/06 16:59:19 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ int					haveequal(char *line);
 void				add_key_envp(char ***envp, char *cmd, int keyindex);
 void				set_signal(void);
 
-int					redirect(t_cmd *cmd_list, int **fds, int *last_index);
-int					redirect_check(t_cmd *cmd_list, int **fds);
+int					redirect(t_cmd *cmd_list, int *last_index, int *fds[]);
+int					redirect_check(t_cmd *cmd_list, int *fds[]);
 int					check_fd_error(t_cmd *cmd_list, int errorcode,
 					int error_index, int fd);
 #endif
