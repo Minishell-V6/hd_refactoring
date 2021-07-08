@@ -6,11 +6,11 @@
 /*   By: djeon <seuyu@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 15:01:44 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 15:43:00 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 18:01:00 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 int				check_whitespace(char *line)
 {

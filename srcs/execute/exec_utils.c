@@ -6,11 +6,11 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 20:00:49 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 16:58:24 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 17:58:31 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 void			init_nbf(t_nbf *nbf)
 {

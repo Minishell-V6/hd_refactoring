@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 21:42:57 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:36:16 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 17:59:55 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/alloc_token.h"
+#include "../../includes/alloc_token.h"
 
 int			alloc_env(char *src, char **dest, char **envp)
 {

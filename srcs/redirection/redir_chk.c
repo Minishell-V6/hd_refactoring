@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:00:44 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:42:26 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 18:00:32 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/redir_chk.h"
+#include "../../includes/redir_chk.h"
 
 int				redir_chk(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:25:19 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 15:41:22 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 17:59:50 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_parse_size.h"
+#include "../../includes/get_parse_size.h"
 
 int			unclosed_quote(char *str, char quote)
 {

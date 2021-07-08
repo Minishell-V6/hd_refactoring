@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 14:13:14 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:39:06 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 17:58:56 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 int				ft_env(char **envp, int fd)
 {

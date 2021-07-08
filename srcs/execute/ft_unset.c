@@ -6,11 +6,11 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 16:27:21 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 15:41:04 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 17:59:18 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/unset.h"
+#include "../../includes/unset.h"
 
 int				ft_find_envkey(char *key, char **envp)
 {

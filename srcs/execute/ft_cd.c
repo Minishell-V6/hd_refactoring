@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 16:37:25 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 13:42:09 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 17:58:43 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 int			mv_home(void)
 {

@@ -6,12 +6,12 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:28:44 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:28:46 by hoylee           ###   ########.fr       */
+/*   Updated: 2021/07/08 17:59:39 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/alloc_token.h"
-#include "../includes/get_parse_size.h"
+#include "../../includes/alloc_token.h"
+#include "../../includes/get_parse_size.h"
 
 int			get_envkey(char *src, char **key)
 {

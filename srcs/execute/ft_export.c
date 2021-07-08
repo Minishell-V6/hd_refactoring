@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 14:13:20 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:39:32 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 17:59:07 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 void			print_quote(char *str, int fd)
 {
