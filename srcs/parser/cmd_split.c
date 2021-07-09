@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 15:33:09 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:36:46 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 18:00:12 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cmd_split.h"
+#include "../../includes/cmd_split.h"
 
 static void			*ft_free(t_token *result, int len)
 {

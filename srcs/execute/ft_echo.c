@@ -6,11 +6,11 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:50:12 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 13:50:14 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 17:58:51 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 int			n_opt_chk(char *cmd)
 {

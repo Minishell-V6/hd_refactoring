@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:29:05 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:29:11 by hoylee           ###   ########.fr       */
+/*   Updated: 2021/07/08 18:00:20 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cmd_split.h"
+#include "../../includes/cmd_split.h"
 
 void				put_quote_flag(char const *s, int *quote)
 {

@@ -6,11 +6,11 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 12:36:01 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 15:40:08 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 18:01:24 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_getenv.h"
+#include "../../includes/ft_getenv.h"
 
 char	*get_env_value(char *key, char **envp)
 {

@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:28:54 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:28:55 by hoylee           ###   ########.fr       */
+/*   Updated: 2021/07/08 18:00:03 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cmd_split.h"
+#include "../../includes/cmd_split.h"
 
 int					word_redirect_len(char const **s, int *len)
 {

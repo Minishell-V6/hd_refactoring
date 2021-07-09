@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:36:03 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 16:58:36 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 18:00:41 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 int				left_redirect(t_cmd *cmd_list, int *last_index)
 {

@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:36:51 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 17:00:19 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 18:00:47 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 int				check_fd_error(t_cmd *cmd_list,
 						int errorcode, int error_index, int fd)

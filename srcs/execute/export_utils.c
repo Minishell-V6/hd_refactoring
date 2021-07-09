@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 16:33:34 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:38:10 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 17:58:39 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 char		**sort_env(char **envp)
 {

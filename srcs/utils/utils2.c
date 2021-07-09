@@ -6,11 +6,11 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:09:31 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 13:10:34 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/08 18:01:05 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 void			str_forward(char *line, int *i)
 {

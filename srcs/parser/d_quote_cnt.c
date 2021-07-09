@@ -6,11 +6,11 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:27:36 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/06 15:27:56 by hoylee           ###   ########.fr       */
+/*   Updated: 2021/07/08 17:59:46 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_parse_size.h"
+#include "../../includes/get_parse_size.h"
 
 int			env_value_size(char *str, int size, char **envp)
 {
