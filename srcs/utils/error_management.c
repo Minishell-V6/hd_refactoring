@@ -111,6 +111,8 @@ void			print_errstr(t_cmd *cmd_list)
 		error_write("minishell: %s: No such file or directory\n",
 					cmd_list->cmdline[cmd_list->err_manage.errindex].cmd, 0);
 		g_exit_status = 1;
+		if (ft_strncmp("env", cmd_list->cmdline[0].cmd, 4) == 0)
+			g_exit_status = 127;
 	}
 	else if (cmd_list->err_manage.errcode == 4)
 	{
