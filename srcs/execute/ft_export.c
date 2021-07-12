@@ -31,8 +31,6 @@ void			print_quote(char *str, int fd)
 		while (str[i])
 			i++;
 		write(fd, str, ++i);
-		write(fd, "=", 1);
-		write(fd, "\"\"", 2);
 	}
 }
 
@@ -73,7 +71,7 @@ int				check_key(char **envp, char *line)
 	}
 	while (envp[i])
 	{
-		if (ft_strncmp(envp[i], line, key) == 0)
+		if (ft_strncmp(envp[i], line, key + 1) == 0)
 			return (i);
 		i++;
 	}

@@ -12,11 +12,17 @@
 
 #include "../../includes/minishell.h"
 
-int				ft_env(char **envp, int fd)
+int				ft_env(t_cmd *cmd_list, char **envp, int fd)
 {
 	int	i;
 
 	i = 0;
+	if(cmd_list->cmdline[1].cmd != 0 && cmd_list->cmdline[i].redir_flag == 0)
+	{
+		cmd_list->err_manage.errcode = 3;
+		cmd_list->err_manage.errindex = 1;
+		return (-1);
+	}
 	while (envp[i])
 	{
 		if (haveequal(envp[i]))

@@ -117,7 +117,7 @@ int				exec_function(t_cmd *cmd_list, char *argv[], char **envp[],
 	else if (ft_strncmp("exit", cmd_list->cmdline[0].cmd, 5) == 0)
 		return (ft_exit(cmd_list));
 	else if (ft_strncmp("env", cmd_list->cmdline[0].cmd, 4) == 0)
-		return (ft_env(*envp, fd));
+		return (ft_env(cmd_list, *envp, fd));
 	else if (ft_strncmp("export", cmd_list->cmdline[0].cmd, 7) == 0)
 		return (ft_export(cmd_list, envp, fd));
 	else if (ft_strncmp("echo", cmd_list->cmdline[0].cmd, 5) == 0)

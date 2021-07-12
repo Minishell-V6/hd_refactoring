@@ -58,7 +58,7 @@ int					ft_cd(t_cmd *cmd_list);
 int					ft_exit(t_cmd *cmd_list);
 int					ft_pwd(int fd);
 int					ft_echo(t_cmd *cmd_list, int fd);
-int					ft_env(char **envp, int fd);
+int					ft_env(t_cmd *cmd_list, char **envp, int fd);
 int					ft_export(t_cmd *cmd_list, char ***envp, int fd);
 
 void				print_errstr(t_cmd *cmd_list);
