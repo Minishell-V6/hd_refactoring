@@ -3,40 +3,36 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: seuyu <seuyu@student.42seoul.kr>           +#+  +:+       +#+         #
+#    By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/25 19:30:48 by djeon             #+#    #+#              #
-#    Updated: 2021/07/08 17:57:28 by djeon            ###   ########.fr        #
+#    Updated: 2021/07/13 19:38:48 by djeon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#CC 				= gcc
-CC 				= gcc -g -fsanitize=address
+CC 				= gcc
 RM				= rm -rf
 CFLAGS 			= -Wall -Wextra -Werror
 NAME 			= minishell
 
-#READLINE_LIB 	= -lreadline -L /Users/$(USER)/.brew/opt/readline/lib
-#READLINE_INC	= -I /Users/$(USER)/.brew/opt/readline/include
-
 READLINE_LIB 	= -lreadline -L/usr/local/opt/readline/lib
 READLINE_INC	= -I/usr/local/opt/readline/include
-
-
-READLINE_LIB 	= -lreadline -L/opt/homebrew/opt/readline/lib
-READLINE_INC	= -I/opt/homebrew/opt/readline/include
 
 LIBFT		= libft.a
 LIBFT_DIR	= libft
 
 SRC_DIR 	= srcs
-SRC 		= srcs/minishell.c srcs/utils/utils.c srcs/parser/parse.c srcs/execute/exec.c \
-	  	  	  srcs/utils/error_management.c srcs/execute/ft_cd.c srcs/execute/ft_exit.c \
-			  srcs/execute/ft_env.c srcs/execute/ft_pwd.c srcs/execute/ft_export.c srcs/execute/export_utils.c \
-			  srcs/signal_handle.c srcs/parser/alloc_token.c srcs/parser/cmd_split.c \
-			  srcs/parser/get_parse_size.c srcs/redirection/redir_chk.c srcs/utils/ft_getenv.c \
+SRC 		= srcs/minishell.c srcs/utils/utils.c srcs/parser/parse.c \
+			  srcs/execute/exec.c srcs/utils/error_management.c \
+			  srcs/execute/ft_cd.c srcs/execute/ft_exit.c \
+			  srcs/execute/ft_env.c srcs/execute/ft_pwd.c \
+			  srcs/execute/ft_export.c srcs/execute/export_utils.c \
+			  srcs/signal_handle.c srcs/parser/alloc_token.c \
+			  srcs/parser/cmd_split.c srcs/parser/get_parse_size.c \
+			  srcs/redirection/redir_chk.c srcs/utils/ft_getenv.c \
 			  srcs/redirection/redirect.c srcs/redirection/redirect_check.c \
-			  srcs/execute/ft_echo.c srcs/execute/ft_unset.c srcs/execute/exec_utils.c srcs/utils/utils2.c \
+			  srcs/execute/ft_echo.c srcs/execute/ft_unset.c \
+			  srcs/execute/exec_utils.c srcs/utils/utils2.c \
 			  srcs/parser/ft_alloc_word.c srcs/parser/d_quote_cnt.c \
 			  srcs/parser/alloc_env_util.c srcs/parser/ft_split_cnt.c
 
