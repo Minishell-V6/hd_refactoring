@@ -71,7 +71,7 @@ int				check_key(char **envp, char *line)
 	}
 	while (envp[i])
 	{
-		if (ft_strncmp(envp[i], line, key + 1) == 0)
+		if (ft_strncmp(envp[i], line, key) == 0)
 			return (i);
 		i++;
 	}
