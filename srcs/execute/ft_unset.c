@@ -6,7 +6,7 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 16:27:21 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/08 17:59:18 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/15 10:31:23 by hoylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int				ft_find_envkey(char *key, char **envp)
 	key_len = ft_strlen(key);
 	while (envp[i])
 	{
-		if (ft_strncmp(key, envp[i], key_len) == 0 && (envp[i][key_len] == '=' || envp[i][key_len] == 0))
+		if (ft_strncmp(key, envp[i], key_len) == 0 &&
+				(envp[i][key_len] == '=' || envp[i][key_len] == 0))
 			return (i);
 		i++;
 	}

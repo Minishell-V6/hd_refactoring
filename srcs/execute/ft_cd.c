@@ -6,7 +6,7 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 16:37:25 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/08 17:58:43 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/15 10:30:06 by hoylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int			mv_home(char **pst_buffer)
 {
 	chdir(getenv("HOME"));
-	if(pst_buffer != 0)
+	if (pst_buffer != 0)
 		free(*pst_buffer);
 	return (1);
 }
@@ -32,7 +32,8 @@ void		make_path(t_cmd *cmd_list)
 	char	*tmp;
 
 	tmp = cmd_list->cmdline[1].cmd;
-	cmd_list -> cmdline[1].cmd = ft_strjoin(getenv("HOME"), &cmd_list->cmdline[1].cmd[1]);
+	cmd_list->cmdline[1].cmd = ft_strjoin(getenv("HOME"),
+								&cmd_list->cmdline[1].cmd[1]);
 	free(tmp);
 }
 

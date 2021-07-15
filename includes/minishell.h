@@ -6,7 +6,7 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 19:54:23 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/06 16:59:19 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/15 10:54:06 by hoylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ int					ft_env(t_cmd *cmd_list, char **envp, int fd);
 int					ft_export(t_cmd *cmd_list, char ***envp, int fd);
 
 void				print_errstr(t_cmd *cmd_list);
+void				error_write(char *error_str,
+						char *err_cmdline, char *err_cmdline2);
+void				print_errstr3(t_cmd *cmd_list);
 
 char				**copy_envp(char **envs);
 int					add_envp(char *cmd, char ***envp);

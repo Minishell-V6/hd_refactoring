@@ -6,7 +6,7 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 16:33:46 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/08 18:00:55 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/15 10:50:55 by hoylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,11 +114,6 @@ void			print_errstr(t_cmd *cmd_list)
 		if (ft_strncmp("env", cmd_list->cmdline[0].cmd, 4) == 0)
 			g_exit_status = 127;
 	}
-	else if (cmd_list->err_manage.errcode == 4)
-	{
-		error_write("minishell: %s: %s: numeric argument required\n",
-cmd_list->cmdline[0].cmd, cmd_list->cmdline[cmd_list->err_manage.errindex].cmd);
-		g_exit_status = 255;
-	}
 	print_errstr2(cmd_list);
+	print_errstr3(cmd_list);
 }

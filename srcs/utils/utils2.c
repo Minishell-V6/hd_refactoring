@@ -6,11 +6,21 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:09:31 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/08 18:01:05 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/15 10:53:49 by hoylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
+
+void			print_errstr3(t_cmd *cmd_list)
+{
+	if (cmd_list->err_manage.errcode == 4)
+	{
+		error_write("minishell: %s: %s: numeric argument required\n",
+cmd_list->cmdline[0].cmd, cmd_list->cmdline[cmd_list->err_manage.errindex].cmd);
+		g_exit_status = 255;
+	}
+}
 
 void			str_forward(char *line, int *i)
 {

@@ -6,7 +6,7 @@
 /*   By: hoylee <hoylee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 14:13:14 by hoylee            #+#    #+#             */
-/*   Updated: 2021/07/08 17:58:56 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/15 10:30:48 by hoylee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int				ft_env(t_cmd *cmd_list, char **envp, int fd)
 	int	i;
 
 	i = 0;
-	if(cmd_list->cmdline[1].cmd != 0 && cmd_list->cmdline[i].redir_flag == 0)
+	if (cmd_list->cmdline[1].cmd != 0 && cmd_list->cmdline[i].redir_flag == 0)
 	{
 		cmd_list->err_manage.errcode = 3;
 		cmd_list->err_manage.errindex = 1;
