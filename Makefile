@@ -6,7 +6,7 @@
 #    By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/25 19:30:48 by djeon             #+#    #+#              #
-#    Updated: 2021/07/15 10:57:32 by hoylee           ###   ########.fr        #
+#    Updated: 2021/07/15 11:29:38 by djeon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,11 @@ RM				= rm -rf
 CFLAGS 			= -Wall -Wextra -Werror
 NAME 			= minishell
 
-READLINE_LIB 	= -lreadline -L/Users/hoylee/.brew/opt/readline/lib
-READLINE_INC	= -I/Users/hoylee/.brew/opt/readline/include
+#READLINE_LIB 	= -lreadline -L/Users/hoylee/.brew/opt/readline/lib
+#READLINE_INC	= -I/Users/hoylee/.brew/opt/readline/include
+
+READLINE_LIB 	= -lreadline -L/usr/local/opt/readline/lib
+READLINE_INC	= -I/usr/local/opt/readline/include
 
 LIBFT		= libft.a
 LIBFT_DIR	= libft
