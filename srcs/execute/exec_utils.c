@@ -6,7 +6,7 @@
 /*   By: djeon <djeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 20:00:49 by djeon             #+#    #+#             */
-/*   Updated: 2021/07/08 17:58:31 by djeon            ###   ########.fr       */
+/*   Updated: 2021/07/15 13:40:09 by djeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void			init_nbf(t_nbf *nbf)
 	nbf->buf = NULL;
 	nbf->env_path = NULL;
 	nbf->paths = NULL;
+	nbf->flag = 0;
 }
 
 int				free_nbf(t_nbf *nbf)
@@ -32,7 +33,7 @@ int				free_nbf(t_nbf *nbf)
 			free(nbf->paths[i]);
 		free(nbf->paths);
 	}
-	return (0);
+	return (-1);
 }
 
 int				check_redirect(t_cmd *cmd_list, int fds[])
